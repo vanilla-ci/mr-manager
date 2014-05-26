@@ -42,7 +42,7 @@ public class WorkService {
 			log.error("Exception while running main scripts", e);
 			// TODO: Status update message here
 		} finally {
-			for (ScriptMessage postScriptMessage : work.getPostBuildScripts()) {
+			for (ScriptMessage postScriptMessage : work.getPostScripts()) {
 				try {
 					int exitCode = executeScriptMessage(work, workingDirectoryForWork, postScriptMessage);
 					if(exitCode != 0) {
