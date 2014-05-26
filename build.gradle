@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'groovy'
 apply plugin: 'idea'
 apply plugin: 'maven'
 
@@ -9,16 +10,36 @@ version '0.0.1'
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
+ext {
+  hornetqVersion = '2.3.18.Final'
+}
+
 repositories {
   mavenCentral()
   mavenLocal()
   maven { url 'http://repository.codehaus.org/org/codehaus' }
+  maven { url 'http://repository.jboss.org/nexus/content/groups/public/' }
 }
 
 dependencies {
+  // vanilla-ci
+  compile 'com.vanilla-ci:script-bundle:1.0'
+
+  // niceties
   compile 'org.jetbrains:annotations:13.0'
   compile 'com.google.guava:guava:16.0'
-  compile 'com.vanilla-ci:script-bundle:1.0'
   compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
+
+  // logging
+  compile 'org.apache.logging.log4j:log4j-api:2.0-rc1'
+  compile 'org.apache.logging.log4j:log4j-core:2.0-rc1'
+
+  // jms
+  compile "org.hornetq:hornetq-server:${hornetqVersion}"
+  compile "org.hornetq:hornetq-jms-server:${hornetqVersion}"
+  compile "org.jboss.javaee:jboss-jms-api:1.1.0.GA"
+
+
   testCompile 'junit:junit-dep:4.10'
+
 }
