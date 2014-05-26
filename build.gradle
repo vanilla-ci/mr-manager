@@ -19,5 +19,6 @@ dependencies {
   compile 'org.jetbrains:annotations:13.0'
   compile 'com.google.guava:guava:16.0'
   compile 'com.vanilla-ci:script-bundle:1.0'
+  compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
   testCompile 'junit:junit-dep:4.10'
 }
