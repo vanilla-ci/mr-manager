@@ -8,7 +8,7 @@ import org.junit.*;
  */
 public class WorkServiceTest {
 	@Test
-	public void teststuff() {
-		System.out.println("And... we have liftoff");
+	public void testExecuteWork() {
+		
 	}
 }
