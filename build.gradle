@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'maven'
+
+group = 'com.vanilla-ci'
+
+version '0.0.1'
+
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7
+
+repositories {
+  mavenCentral()
+  mavenLocal()
+  maven { url 'http://repository.codehaus.org/org/codehaus' }
+}
+
+dependencies {
+  compile 'org.jetbrains:annotations:13.0'
+  compile 'com.google.guava:guava:16.0'
+  testCompile 'junit:junit-dep:4.10'
+}
