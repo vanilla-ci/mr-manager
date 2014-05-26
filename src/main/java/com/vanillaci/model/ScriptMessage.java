@@ -1,6 +1,7 @@
 package com.vanillaci.model;
 
 import com.google.common.collect.*;
+import org.codehaus.jackson.annotate.*;
 import org.jetbrains.annotations.*;
 
 import java.util.*;
@@ -13,7 +14,11 @@ public class ScriptMessage {
 	@NotNull private final String version;
 	@NotNull private final Map<String, String> parameters;
 
-	public ScriptMessage(@NotNull String name, @NotNull String version, @NotNull Map<String, String> parameters) {
+	public ScriptMessage(
+		@JsonProperty("name") @NotNull String name,
+		@JsonProperty("version") @NotNull String version,
+		@JsonProperty("parameters") @NotNull Map<String, String> parameters
+	) {
 		this.name = name;
 		this.version = version;
 		this.parameters = ImmutableMap.copyOf(parameters);
