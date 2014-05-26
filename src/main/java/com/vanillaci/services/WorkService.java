@@ -89,8 +89,17 @@ public class WorkService {
 	}
 
 	private File getWorkingDirectoryForWork(Work work) {
-		File homeDir = new File(System.getenv("VANILLACI_HOME"));
+		//TODO: Make less crappy :(
+		String vanillaciHomeEnvVar = System.getenv("VANILLACI_HOME");
+		if(vanillaciHomeEnvVar == null) {
+			vanillaciHomeEnvVar = "./vanillaCiHome";
+		}
+		File homeDir = new File(vanillaciHomeEnvVar);
 		File workDir = new File(homeDir, "workingDirectories");
+		if(!workDir.exists() && !workDir.mkdirs()) {
+			throw new RuntimeException("Could not make working directory: " + workDir.getAbsolutePath());
+		}
+
 		String id = work.getId(); // TODO: slugify!!
 		return new File(workDir, id);
 	}

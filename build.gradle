@@ -39,7 +39,8 @@ dependencies {
   compile "org.hornetq:hornetq-jms-server:${hornetqVersion}"
   compile "org.jboss.javaee:jboss-jms-api:1.1.0.GA"
 
-
+  // testing
+  testCompile 'org.mockito:mockito-all:1.8.4'
   testCompile 'junit:junit-dep:4.10'
 
 }
