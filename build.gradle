@@ -40,6 +40,7 @@ dependencies {
   compile "org.jboss.javaee:jboss-jms-api:1.1.0.GA"
 
 
-  testCompile 'junit:junit-dep:4.10'
+  testCompile 'junit:junit:4.11'
+  testCompile "org.codehaus.groovy:groovy-all:2.3.0"
 
 }

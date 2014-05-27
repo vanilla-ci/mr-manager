@@ -39,4 +39,26 @@ public class Work {
 	public List<ScriptMessage> getScripts() {
 		return scripts;
 	}
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    Work work = (Work) o;
+
+    return id.equals(work.id);
+  }
+
+  @Override
+  public int hashCode() {
+    return id.hashCode();
+  }
+
+  @Override
+  public String toString() {
+    return "Work{" +
+        "id='" + id + '\'' +
+        '}';
+  }
 }
