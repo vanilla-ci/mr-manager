@@ -25,7 +25,7 @@ public class WorkRunnable implements Runnable {
       currentThread.setName(String.format("Executing (%s)", work));
 
       // TODO, do yer magic joel
-      new WorkService().doWork(work);
+      new WorkService(null, null).execute(work);
     } finally {
       workTracker.endWork(work);
       currentThread.setName(name);

@@ -87,7 +87,9 @@ public class WorkConsumer {
             pollForWork();
           } else {
             try {
-              workTracker.wait();
+              synchronized (workTracker) {
+                workTracker.wait();
+              }
             } catch (InterruptedException e) {
               // restart loop
             }

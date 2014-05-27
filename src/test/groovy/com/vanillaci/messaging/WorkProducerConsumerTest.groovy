@@ -23,7 +23,7 @@ class WorkProducerConsumerTest {
     Queue workerQueue = jmsServer.lookup("/queue/workerQueue") as Queue
     WorkProducer workProducer = new WorkProducer(connectionFactory, workerQueue)
 
-    Work work = new Work("someid", [:], [])
+    Work work = new Work("someid", [:], [], [])
     workProducer.sendWork(work)
 
     WorkConsumer workConsumer = new WorkConsumer(connectionFactory, workerQueue, JmsExpression.EMPTY, 1)

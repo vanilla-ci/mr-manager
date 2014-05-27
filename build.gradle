@@ -23,7 +23,7 @@ repositories {
 
 dependencies {
   // vanilla-ci
-  compile 'com.vanilla-ci:script-bundle:1.0'
+  compile 'com.vanilla-ci:script-bundle:1.0.1'
 
   // niceties
   compile 'org.jetbrains:annotations:13.0'
@@ -40,7 +40,9 @@ dependencies {
   compile "org.jboss.javaee:jboss-jms-api:1.1.0.GA"
 
 
+	// testing
   testCompile 'junit:junit:4.11'
   testCompile "org.codehaus.groovy:groovy-all:2.3.0"
+  testCompile 'org.mockito:mockito-all:1.8.4'
 
 }
